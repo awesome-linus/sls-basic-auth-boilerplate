@@ -16,7 +16,6 @@ const serverlessConfiguration: AWS = {
     // node12系、us-east-1でないといけないので注意。
     runtime: 'nodejs12.x',
     region: 'us-east-1',
-    profile: process.env.AWS_PROFILE,
     deploymentBucket: {
       name: 'sls-basic-auth-boilerplate-deployment'
     },
