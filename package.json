@@ -4,7 +4,12 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy:dev": "sls deploy --stage dev",
+    "deploy:stg": "sls deploy --stage stg",
+    "deploy:prd": "sls deploy --stage prd",
+    "remove:dev": "sls remove --stage dev",
+    "remove:stg": "sls remove --stage stg",
+    "remove:prd": "sls remove --stage prd"
   },
   "dependencies": {
     "@middy/core": "^1.5.0",
@@ -17,7 +22,7 @@
     "@types/node": "^14.14.6",
     "fork-ts-checker-webpack-plugin": "^6.0.0",
     "json-schema-to-ts": "^1.4.1",
-    "serverless": "^2.16.0",
+    "serverless": "2.20.0",
     "serverless-webpack": "^5.2.0",
     "ts-loader": "^8.0.10",
     "ts-node": "^9.0.0",

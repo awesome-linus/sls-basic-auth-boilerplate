@@ -17,10 +17,10 @@ const serverlessConfiguration: AWS = {
     runtime: 'nodejs12.x',
     region: 'us-east-1',
     profile: process.env.AWS_PROFILE,
-    apiGateway: {
-      minimumCompressionSize: 1024,
-      shouldStartNameWithService: true,
+    deploymentBucket: {
+      name: 'sls-basic-auth-boilerplate-deployment'
     },
+    stage: "${opt:stage, 'dev'}",
     lambdaHashingVersion: '20201221',
     timeout: 900,
     role: 'roleLambdaEdge'
@@ -30,7 +30,7 @@ const serverlessConfiguration: AWS = {
       handler: 'src/functions/index.handler',
       memorySize: 128,
       timeout: 5,
-      name: 'basic-auth'
+      name: '${self:provider.stage}-basic-auth'
     }
   },
   resources: {
